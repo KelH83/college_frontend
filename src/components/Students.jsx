@@ -16,6 +16,7 @@ const Students = () => {
         getStudents()
         .then((returnedData) => {
             setStudents(returnedData)
+            console.log("Students data: ",students);
             setIsLoading(false)
         })
        .catch((error) => {

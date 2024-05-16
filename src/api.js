@@ -36,20 +36,20 @@ export const deleteStudent = (studentId) =>{
 }
 
 export const amendStudent = (studentId, updateData) =>{
-    return api.delete(`/${studentId}`,updateData)
+    return api.patch(`/${studentId}`,updateData)
     .then((response) =>{
         console.log(response.body.msg);
     })
     .catch((error) =>{
-        console.log("Error deleting student: ", error);
+        console.log("Error amending student: ", error);
         return error
     })
 }
 
 export const addStudent = (newStudent) =>{
-    return api.post(`/}`,newStudent)
+    return api.post(`/`,newStudent)
     .then((response) =>{
-        console.log(response.body.msg);
+        console.log(response.body);
     })
     .catch((error) =>{
         console.log("Error adding student: ", error);
