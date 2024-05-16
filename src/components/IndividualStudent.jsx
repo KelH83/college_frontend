@@ -27,7 +27,7 @@ const IndividualStudent = () => {
     useEffect(() => {
         getStudentById(student_id)
         .then((returnedData) => {
-            setStudent(returnedData)
+            setStudent(returnedData.student)
             setIsLoading(false)
         })
        .catch((error) => {
@@ -116,7 +116,7 @@ const IndividualStudent = () => {
         <Link to={`/`}><button className='back-button'>Back</button></Link>
         <Container  className='students-container' fluid>
         <Row>
-            <Col key={student.email} className='students-individual'>
+            <Col key={student.student_id} className='students-individual'>
             <p className='student-info'><strong>Name:</strong> {student.name}</p>
             <p className='student-info'><strong>D.O.B:</strong> {student.dateOfBirth}</p>
             <p className='student-info'><strong>Email:</strong> {student.email}</p>

@@ -14,13 +14,12 @@ const AddStudent = () => {
      const handleSubmit = (event) =>{
         setDisabledPostButton(true)
         event.preventDefault()
-        const newStudent = {
-            name:studentName,
-            dateOfBirth:studentDob,
+        const newStudent = 
+            {name: studentName,
             email:studentEmail,
-            address:studentAddress
-        }
-        
+            address:studentAddress,
+            dateOfBirth:studentDob
+                  }
         addStudent(newStudent)
         .then(()=>{
         alert("Student successfully added")
