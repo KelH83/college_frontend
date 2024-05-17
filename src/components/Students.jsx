@@ -42,18 +42,23 @@ const Students = () => {
 
     return(
         <>
+        <Container fluid className="student-page">
+        <Container fluid className="add-container">
         <Link to={`/add_student`}><button className='add-student' data-testid="add-button">Add Student</button></Link>
-        <Container  className='students-container' fluid>
+
+        </Container>
+        <Container fluid className='students-container'>
         <Row>
         {students.map((student, index) =>{
             return(
-            <Col key={student.student_id} className='students-individual' data-testid={`student-${index}`}>
+            <Col xs={true} sm={true} md={true} lg={true} key={student.student_id} className='students-individual' data-testid={`student-${index}`}>
             <p className='student-info'>{student.name}</p>
             <Link to={`/${student.student_id}`}><button className='buttons' data-testid={`see-more-${index}`}>See more</button></Link>
             </Col>
             )
         })}
         </Row>
+        </Container>
         </Container>
         </>
     )

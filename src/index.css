@@ -5,7 +5,8 @@ body{
 }
 
 header{
-  display: flex;
+  display: inline-flex;
+  justify-content: center;
 }
 
 .school-logo{
@@ -15,7 +16,6 @@ header{
 
 header h1{
   align-self: center;
-  margin: auto;
   font-size: 3.5rem;
 }
 
@@ -24,20 +24,37 @@ header h1{
   font-size: 1.5rem;
 }
 
+.loading{
+  text-align: center;
+  font-size: 2em;
+}
+
+.student-page{
+  min-height:100%;
+  background:linear-gradient(0deg, rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0.5)), url('../public/collegebuilding.jpg');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 8% 1%;
+}
+
 .students-container{
-    text-align: center;
-    margin: auto;
+    width: auto;
 }
 
 .students-individual{
   font-size: 1.5em;
   background-color: rgb(242, 242, 242);
     padding: 10px;
-    margin: auto;
-    margin-bottom: 20px;
+    margin: 20px 5px;
     border-radius: 8px;
-    border: 2px solid rgb(64, 2, 105);
-    width: 50%
+    border: 2px solid black;
+}
+
+.students-individual:hover{
+    border: 2px solid brown;
+    box-shadow: 0px 0px 20px 5px hsl(0deg 0% 0% / 0.2);
 }
 
 .student-info{
@@ -49,15 +66,22 @@ header h1{
   color: white;
   font-size: 0.75em;
   border-radius: 8px;
+  border: 2px solid black;
 }
 
 .buttons:hover{
-  background-color: white;
-  color: brown;
+  background-color: black;
+  color: white;
+  border: 2px solid brown;
+}
+
+.add-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .add-student{
-  margin: 10px 45%;
   padding: 5px;
   background-color: brown;
   color: white;
@@ -66,12 +90,13 @@ header h1{
 }
 
 .add-student:hover{
-  background-color: white;
-  color: brown;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 0px 20px 5px hsl(0deg 0% 0% / 0.2);
 }
 
 .back-button{
-  margin: 10px 45%;
+  margin: 10% 0;
   padding: 5px;
   background-color: brown;
   color: white;
@@ -80,8 +105,9 @@ header h1{
 }
 
 .back-button:hover{
-  background-color: white;
-  color: brown;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 0px 20px 5px hsl(0deg 0% 0% / 0.2);
 }
 
 /* ADD STUDENT */
@@ -91,9 +117,11 @@ header h1{
   text-align: center;
 }
 .add-student-form{
-  background-color: rgb(242, 242, 242);
+  text-align: center;
+  background-color: brown;
+  color: white;
   width: 50vw;
-  margin: auto;
+  margin: 10px auto;
   padding: 10px;
   border-radius: 12px;
   border: 2px black solid;
@@ -103,65 +131,60 @@ header h1{
   font-size: 1.25em;
   font-weight: bold;
   text-align: center;
-  margin-left: 30%;
   
 }
 .add-student-form input{
   font-size: 1.25em;
   border-radius: 8px;
-  margin-left: 30%;
   margin-top: 5px;
   margin-bottom: 20px;
 }
 
 .add-student-form button{
-  background-color:brown;
-  color: white;
+  background-color:rgb(242, 242, 242);
+  color: brown;
   font-size: 1.25em;
+  font-weight: bold;
   padding:8px;
   width: 50%;
   border-radius: 12px;
-  margin-left: 25%;
 }
 
 .add-student-form button:hover{
-  background-color: white;
-  color: brown;
+  background-color: black;
+  color: white;
   transition: 0.3s;
   transition-timing-function: linear;
+}
+
+/*INDIVIDUAL STUDENT*/
+.individual-container{
+  width: auto;
+  max-width: 50%;
 }
 /* AMEND STUDENT MODAL */
 
 .modal{
-  position: absolute;
-  top: 18%;
-  left: 18%;
-  background-color: brown;
-  width: 55vw;
-  height: 60vh;
   font-size: 1.5em;
-  color: white;
-  text-align: center;
-  border-radius: 8px;
-  border: 2px solid black;
-  padding: 10px;
 }
 
 .amend-student-form{
   background-color: brown;
-  font-size: 1em;
+  color: white;
+  padding: 3%;
+  text-align: center;
+  border-radius: 3%;
 }
 
 .amend-student-form input{
-  font-size: 0.9em;
   border-radius: 8px;
-  padding: 3px;
 }
 
 .modal-buttons{
   background-color: white;
   color: brown;
   font-size: 0.75em;
+  font-weight: bold;
   margin: 10px;
   border-radius: 8px;
   border: 1px solid black;

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import {addStudent} from '../api'
 import { useState, useEffect } from 'react'
+import Container from 'react-bootstrap/Container';
 
 const AddStudent = () => {
     const [errorMsg, setErrorMsg] = useState(null)
@@ -43,9 +44,12 @@ const AddStudent = () => {
 
     return(
         <>
+        <Container fluid className="student-page">
+        <Container fluid className="add-container">
         <Link to={`/`}><button className='back-button'>Back</button></Link>
-        <h1 className='add-new-student'>Add a new student:</h1>
+        </Container>
         <form className='add-student-form' onSubmit={handleSubmit}>
+        <h1 className='add-new-student'>Add a new student:</h1>
             <label htmlFor='student-name'>Name:
             <br />
             <input type='text'value={studentName}
@@ -76,6 +80,7 @@ const AddStudent = () => {
             <br />
             <button disabled={disabledPostButton} type='submit'>Add student</button>
         </form>
+        </Container>
         </>
     )
 }

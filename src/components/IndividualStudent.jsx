@@ -113,8 +113,11 @@ const IndividualStudent = () => {
 
     return(
         <>
+        <Container fluid className="student-page">
+        <Container fluid className="add-container">
         <Link to={`/`}><button className='back-button'>Back</button></Link>
-        <Container  className='students-container' fluid>
+        </Container>
+        <Container  className='individual-container' fluid>
         <Row>
             <Col key={student.student_id} className='students-individual'>
             <p className='student-info'><strong>Name:</strong> {student.name}</p>
@@ -134,44 +137,37 @@ const IndividualStudent = () => {
         <form className='amend-student-form' onSubmit={handleAmend}>
             <label htmlFor='student-name'>Name:
             <br />
-            <input type='text'value={studentName}
-            onChange={(event) => setStudentName(event.target.value)} placeholder={student.name}>
+            <input type='text' defaultValue={student.name} 
+            onChange={(event) => setStudentName(event.target.value)}>
             </input>
             </label>
             <br />
             <label htmlFor='student-dob'>Date Of birth:
             <br />
-            <input type='text'value={studentDob}
-            onChange={(event) => setStudentDob(event.target.value)} placeholder={student.dateOfBirth}>
+            <input type='text'
+            onChange={(event) => setStudentDob(event.target.value)} defaultValue={student.dateOfBirth}>
             </input>
             </label>
             <br />
             <label htmlFor='student-email'>Email:
             <br />
-            <input type='text'value={studentEmail}
-            onChange={(event) => setStudentEmail(event.target.value)} placeholder={student.email}>
+            <input type='text'
+            onChange={(event) => setStudentEmail(event.target.value)} defaultValue={student.email}>
             </input>
             </label>
             <br />
             <label htmlFor='student-name'>Address:
             <br />
-            <input type='text'value={studentAddress}
-            onChange={(event) => setStudentAddress(event.target.value)} placeholder={student.address}>
+            <input type='text'
+            onChange={(event) => setStudentAddress(event.target.value)} defaultValue={student.address}>
             </input>
             </label>
             <br />
             <button type='submit' className='modal-buttons'>Submit</button>
         </form>
-
-
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" className='modal-buttons' onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
-
+        </Container>
     </>
         
     )
